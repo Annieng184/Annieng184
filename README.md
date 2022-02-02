@@ -1,0 +1,4 @@
+- 👋 Hi, I’m @Annieng184
+- 👀 I’m interested in analyzing business data and optimizing performance
+- 🌱 I’m currently learning coding for my data analyst journey
+- 📫 You can reach out to me via hatrang1847@gmail.com
