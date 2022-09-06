@@ -1,3 +1,2 @@
-- 👋 Hi, I’m @Annieng184
+- 👋 Hi, I’m Annie
 - 🌱 I’m currently learning coding for my data analyst journey
-- 📫 You can reach out to me via hatrang1847@gmail.com
