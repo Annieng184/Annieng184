@@ -1,0 +1,36 @@
+You are given two tables: Students and Grades. Students contains three columns ID, Name and Marks.
+Ketty gives Eve a task to generate a report containing three columns: Name, Grade and Mark. 
+Ketty doesn't want the NAMES of those students who received a grade lower than 8. The report must be in descending order by grade -- i.e. 
+higher grades are entered first. If there is more than one student with the same grade (8-10) assigned to them, 
+order those particular students by their name alphabetically. Finally, if the grade is lower than 8, 
+use "NULL" as their name and list them by their grades in descending order. If there is more than one student with the same grade (1-7) assigned to them, 
+order those particular students by their marks in ascending order. Write a query to help Eve.
+
+With tmp as (SELECT name, marks, case 
+when marks between 0 and 9 then 1
+when marks between 10 and 19 then 2
+when marks between 20 and 29 then 3
+when marks between 30 and 39 then 4
+when marks between 40 and 49 then 5
+when marks between 50 and 59 then 6
+when marks between 60 and 69 then 7
+when marks between 70 and 79 then 8
+when marks between 80 and 89 then 9
+when marks between 90 and 100 then 10
+end as 'Grade'
+FROM students)
+
+SELECT 
+  CASE 
+    WHEN grade >= 8 THEN name
+    ELSE 'NULL'
+  END AS name, 
+  grade, 
+  marks
+FROM tmp
+ORDER BY 
+  grade DESC, 
+  CASE 
+    WHEN grade >= 8 THEN name
+    ELSE marks
+  END
